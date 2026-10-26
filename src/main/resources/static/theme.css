@@ -1,0 +1,426 @@
+/*
+ * Precision Esports Canvas — Bootstrap 5.3 theme
+ * Adapted from the provided DESIGN.md.
+ * Load this file AFTER Bootstrap's CSS.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: light;
+
+  /* Brand palette */
+  --esports-primary: #4f46e5;
+  --esports-primary-hover: #4338ca;
+  --esports-cyan: #06b6d4;
+  --esports-mint: #10b981;
+
+  /* Surfaces and text */
+  --esports-canvas: #ffffff;
+  --esports-surface: #f8fafc;
+  --esports-surface-raised: #f1f5f9;
+  --esports-border: #e2e8f0;
+  --esports-border-strong: #cbd5e1;
+  --esports-text: #0f172a;
+  --esports-text-secondary: #334155;
+  --esports-text-muted: #64748b;
+  --esports-placeholder: #94a3b8;
+  --esports-success-bg: #f0fdf4;
+  --esports-success-text: #15803d;
+  --esports-success-border: #bbf7d0;
+  --esports-danger: #ba1a1a;
+
+  /* Typography */
+  --bs-body-font-family: 'Plus Jakarta Sans', sans-serif;
+  --bs-body-font-size: 0.875rem;
+  --bs-body-line-height: 1.6;
+  --bs-body-color: var(--esports-text);
+  --bs-body-bg: var(--esports-surface);
+  --bs-heading-color: var(--esports-text);
+  --bs-font-sans-serif: 'Plus Jakarta Sans', sans-serif;
+
+  /* Bootstrap theme colors */
+  --bs-primary: var(--esports-primary);
+  --bs-primary-rgb: 79, 70, 229;
+  --bs-secondary: var(--esports-text-secondary);
+  --bs-secondary-rgb: 51, 65, 85;
+  --bs-success: var(--esports-mint);
+  --bs-success-rgb: 16, 185, 129;
+  --bs-info: var(--esports-cyan);
+  --bs-info-rgb: 6, 182, 212;
+  --bs-danger: var(--esports-danger);
+  --bs-danger-rgb: 186, 26, 26;
+  --bs-light: var(--esports-surface-raised);
+  --bs-light-rgb: 241, 245, 249;
+  --bs-dark: var(--esports-text);
+  --bs-dark-rgb: 15, 23, 42;
+
+  --bs-border-color: var(--esports-border);
+  --bs-border-radius: 0.25rem;
+  --bs-border-radius-sm: 0.25rem;
+  --bs-border-radius-lg: 0.5rem;
+  --bs-border-radius-xl: 0.75rem;
+  --bs-link-color: var(--esports-primary);
+  --bs-link-hover-color: var(--esports-primary-hover);
+  --bs-focus-ring-color: rgba(99, 102, 241, 0.25);
+
+  --esports-shadow-1: 0 1px 3px rgba(15, 23, 42, 0.04), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+  --esports-shadow-2: 0 4px 16px -4px rgba(79, 70, 229, 0.08), 0 8px 24px -4px rgba(15, 23, 42, 0.06);
+  --esports-shadow-cyan: 0 0 20px -2px rgba(6, 182, 212, 0.25);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--esports-surface);
+  color: var(--esports-text);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6,
+.esports-heading,
+.esports-label,
+.esports-stat {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+h1, .esports-hero-title {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: -0.03em;
+}
+
+h2, .esports-title-lg {
+  font-size: clamp(1.625rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+h3, .esports-title-md {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: -0.01em;
+}
+
+.esports-title-sm {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+.esports-body-lg {
+  font-size: 1rem;
+  line-height: 1.625;
+}
+
+.esports-body-sm {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.esports-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.esports-label-sm {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.esports-stat {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Layout helpers */
+.esports-page {
+  width: min(100% - 2rem, 1440px);
+  margin-inline: auto;
+  padding-block: 2rem;
+}
+
+.esports-section {
+  padding: 1.5rem;
+  background: var(--esports-surface);
+}
+
+/* Cards and panels */
+.card,
+.esports-card {
+  color: var(--esports-text);
+  background: var(--esports-canvas);
+  border: 1px solid var(--esports-border);
+  border-radius: 0.5rem;
+  box-shadow: var(--esports-shadow-1);
+  transition: box-shadow 160ms ease, transform 160ms ease, border-color 160ms ease;
+}
+
+.card-header,
+.esports-card-header {
+  background: transparent;
+  border-bottom: 1px solid var(--esports-surface-raised);
+}
+
+.card-footer,
+.esports-card-footer {
+  background: transparent;
+  border-top: 1px solid var(--esports-surface-raised);
+}
+
+.esports-card-interactive:hover {
+  border-color: #c7d2fe;
+  box-shadow: var(--esports-shadow-2);
+  transform: translateY(-2px);
+}
+
+.esports-card-active {
+  border-left: 3px solid var(--esports-primary);
+}
+
+.esports-card-live {
+  border-left: 3px solid var(--esports-cyan);
+  box-shadow: var(--esports-shadow-cyan);
+}
+
+/* Buttons */
+.btn {
+  --bs-btn-font-family: 'Space Grotesk', sans-serif;
+  --bs-btn-font-weight: 600;
+  --bs-btn-border-radius: 0.25rem;
+  transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--esports-primary);
+  --bs-btn-border-color: var(--esports-primary);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--esports-primary-hover);
+  --bs-btn-hover-border-color: var(--esports-primary-hover);
+  --bs-btn-active-bg: #3730a3;
+  --bs-btn-active-border-color: #3730a3;
+  --bs-btn-focus-shadow-rgb: 99, 102, 241;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.18);
+}
+
+.btn-outline-secondary,
+.btn-light,
+.esports-btn-secondary {
+  --bs-btn-color: var(--esports-text);
+  --bs-btn-bg: #fff;
+  --bs-btn-border-color: var(--esports-border);
+  --bs-btn-hover-color: var(--esports-text);
+  --bs-btn-hover-bg: var(--esports-surface-raised);
+  --bs-btn-hover-border-color: var(--esports-border-strong);
+}
+
+.btn-info,
+.esports-btn-action {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--esports-cyan);
+  --bs-btn-border-color: var(--esports-cyan);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #0891b2;
+  --bs-btn-hover-border-color: #0891b2;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Forms */
+.form-label {
+  margin-bottom: 0.375rem;
+  color: var(--esports-text-secondary);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.form-control,
+.form-select {
+  min-height: 2.625rem;
+  color: var(--esports-text);
+  background-color: #fff;
+  border: 1px solid var(--esports-border-strong);
+  border-radius: 0.25rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.form-control::placeholder {
+  color: var(--esports-placeholder);
+  opacity: 1;
+}
+
+.form-control:focus,
+.form-select:focus {
+  color: var(--esports-text);
+  background-color: #fff;
+  border-color: var(--esports-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.form-check-input {
+  border-color: var(--esports-border-strong);
+}
+
+.form-check-input:checked {
+  background-color: var(--esports-primary);
+  border-color: var(--esports-primary);
+}
+
+/* Alerts, chips and badges */
+.alert {
+  border-radius: 0.375rem;
+  border-width: 1px;
+}
+
+.alert-success {
+  color: var(--esports-success-text);
+  background: var(--esports-success-bg);
+  border-color: var(--esports-success-border);
+}
+
+.badge,
+.esports-chip,
+.esports-rank-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--esports-border);
+  border-radius: 0.25rem;
+  background: var(--esports-surface-raised);
+  color: var(--esports-text-secondary);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.esports-chip-live {
+  color: var(--esports-success-text);
+  background: var(--esports-success-bg);
+  border-color: var(--esports-success-border);
+}
+
+.esports-chip-live::before {
+  width: 6px;
+  height: 6px;
+  content: '';
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--esports-mint);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.12);
+}
+
+.esports-chip-live-pulse::before {
+  animation: esports-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes esports-pulse {
+  0%, 100% { box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.12); }
+  50% { box-shadow: 0 0 0 5px rgba(16, 185, 129, 0.06); }
+}
+
+/* Tables and roster rows */
+.table {
+  --bs-table-color: var(--esports-text);
+  --bs-table-bg: #fff;
+  --bs-table-border-color: var(--esports-border);
+  --bs-table-striped-bg: var(--esports-surface);
+  --bs-table-hover-bg: var(--esports-surface-raised);
+  vertical-align: middle;
+}
+
+.table thead th {
+  color: var(--esports-text-muted);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom-width: 1px;
+}
+
+.esports-roster-row:nth-child(odd) { background: #fff; }
+.esports-roster-row:nth-child(even) { background: var(--esports-surface); }
+.esports-roster-row:hover { background: var(--esports-surface-raised); }
+
+/* Utilities */
+.text-primary { color: var(--esports-primary) !important; }
+.text-secondary { color: var(--esports-text-secondary) !important; }
+.text-muted { color: var(--esports-text-muted) !important; }
+.bg-light { background-color: var(--esports-surface-raised) !important; }
+.bg-white { background-color: #fff !important; }
+.border { border-color: var(--esports-border) !important; }
+.shadow-sm { box-shadow: var(--esports-shadow-1) !important; }
+
+.esports-divider {
+  height: 1px;
+  border: 0;
+  background: var(--esports-border);
+  opacity: 1;
+}
+
+.esports-focus-visible:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--esports-primary);
+  outline-offset: 3px;
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .esports-page { width: min(100% - 3rem, 1440px); }
+}
+
+@media (min-width: 1200px) {
+  .esports-page { width: min(100% - 4rem, 1440px); }
+}
+
+@media (max-width: 767.98px) {
+  .esports-page {
+    width: calc(100% - 1.5rem);
+    padding-block: 1rem;
+  }
+
+  .esports-section { padding: 0.75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
